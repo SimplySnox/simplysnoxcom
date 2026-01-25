@@ -1,22 +1,23 @@
 {
+  "redirects": [
+    { "source": "/live", "destination": "https://twitch.tv/simplysnox", "permanent": false },
+    { "source": "/twitch", "destination": "https://twitch.tv/simplysnox", "permanent": false },
+
+    { "source": "/dsc", "destination": "https://discord.gg/RaQwfpCry8", "permanent": false },
+    { "source": "/discord", "destination": "https://discord.gg/RaQwfpCry8", "permanent": false },
+
+    { "source": "/youtube", "destination": "https://youtube.com/@SimplySnox", "permanent": false },
+    { "source": "/yt", "destination": "https://youtube.com/@SimplySnox", "permanent": false },
+    { "source": "/vods", "destination": "https://youtube.com/@SimplySnoxVODs", "permanent": false },
+
+    { "source": "/github", "destination": "https://github.com/simplysnox", "permanent": false },
+    { "source": "/git", "destination": "https://github.com/simplysnox", "permanent": false },
+    { "source": "/gh", "destination": "https://github.com/simplysnox", "permanent": false },
+
+    { "source": "/twitter", "destination": "https://x.com/simplysnox", "permanent": false },
+    { "source": "/x", "destination": "https://x.com/simplysnox", "permanent": false }
+  ],
   "rewrites": [
-    { "source": "/live", "destination": "https://twitch.tv/simplysnox" },
-    { "source": "/twitch", "destination": "https://twitch.tv/simplysnox" },
-
-    { "source": "/dsc", "destination": "https://discord.gg/RaQwfpCry8" },
-    { "source": "/discord", "destination": "https://discord.gg/RaQwfpCry8" },
-
-    { "source": "/youtube", "destination": "https://youtube.com/@SimplySnox" },
-    { "source": "/yt", "destination": "https://youtube.com/@SimplySnox" },
-    { "source": "/vods", "destination": "https://youtube.com/@SimplySnoxVODs" },
-
-    { "source": "/github", "destination": "https://github.com/simplysnox" },
-    { "source": "/git", "destination": "https://github.com/simplysnox" },
-    { "source": "/gh", "destination": "https://github.com/simplysnox" },
-
-    { "source": "/twitter", "destination": "https://x.com/simplysnox" },
-    { "source": "/x", "destination": "https://x.com/simplysnox" },
-
     { "source": "/:path*", "destination": "/index.html" }
   ]
 }
