@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "site": "simplysnox-com",
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { "source": "**", "destination": "/index.html" },
+      { "source": ["/live", "/twitch"], "destination": "https://twitch.tv/simplysnox" },
+      { "source": ["/discord", "/dsc"], "destination": "https://discord.gg/RaQwfpCry8" }
+    ]
+  }
+}
