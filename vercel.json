@@ -1,7 +1,15 @@
 {
   "rewrites": [
-    { "source": "/:path*", "destination": "/index.html" },
-    { "source": ["/live","/twitch"], "destination": "https://twitch.tv/simplysnox" },
-    { "source": ["/dsc","/discord"], "destination": "https://discord.gg/RaQwfpCry8" }
+    { "source": "/live", "destination": "https://twitch.tv/simplysnox" },
+    { "source": "/twitch", "destination": "https://twitch.tv/simplysnox" },
+
+    { "source": "/dsc", "destination": "https://discord.gg/RaQwfpCry8" },
+    { "source": "/discord", "destination": "https://discord.gg/RaQwfpCry8" },
+
+    { "source": "/youtube", "destination": "https://youtube.com/@SimplySnox" },
+    { "source": "/yt", "destination": "https://youtube.com/@SimplySnox" },
+    { "source": "/vods", "destination": "https://youtube.com/@SimplySnoxVODs" },
+
+    { "source": "/:path*", "destination": "/index.html" }
   ]
 }
