@@ -13,7 +13,7 @@ export default function App() {
       <Route path="/api/fortune" element={<Fortune />} />
       <Route path="/api/roast" element={<Roast />} />
 
-      {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
