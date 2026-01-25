@@ -1,3 +1,7 @@
 {
-  "rewrites": [{ "source": "/:path*", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/:path*", "destination": "/index.html" },
+    { "source": ["/live","/twitch"], "destination": "https://twitch.tv/simplysnox" },
+    { "source": ["/dsc","/discord"], "destination": "https://discord.gg/RaQwfpCry8" }
+  ]
 }
