@@ -10,6 +10,13 @@
     { "source": "/yt", "destination": "https://youtube.com/@SimplySnox" },
     { "source": "/vods", "destination": "https://youtube.com/@SimplySnoxVODs" },
 
+    { "source": "/github", "destination": "https://github.com/simplysnox" },
+    { "source": "/git", "destination": "https://github.com/simplysnox" },
+    { "source": "/gh", "destination": "https://github.com/simplysnox" },
+
+    { "source": "/twitter", "destination": "https://x.com/simplysnox" },
+    { "source": "/x", "destination": "https://x.com/simplysnox" },
+
     { "source": "/:path*", "destination": "/index.html" }
   ]
 }
