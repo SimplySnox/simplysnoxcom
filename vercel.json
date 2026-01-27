@@ -16,5 +16,8 @@
 
     { "source": "/twitter", "destination": "https://x.com/simplysnox", "permanent": false },
     { "source": "/x", "destination": "https://x.com/simplysnox", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
