@@ -1,5 +1,7 @@
-/* ===== Reset / Make viewport math reliable ===== */
-* { box-sizing: border-box; }
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   height: 100%;
@@ -7,37 +9,36 @@ html, body {
 }
 
 #root {
-  height: 100%;
+  min-height: 100%;
 }
 
 /* ===== Base ===== */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: white;
-  overflow: hidden; /* ✅ no tiny scrollbars */
+
+  /* ✅ scrolling restored */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-/* ===== TRUE center (horizontal + vertical) ===== */
+/* ===== Centered layout (homepage only) ===== */
 .page {
-  position: fixed;
-  inset: 0;
+  min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 16px;
 
-  /* ✅ Background moved here so OBS pages can stay transparent */
   background:
     radial-gradient(900px 600px at 15% 20%, rgba(56, 189, 248, 0.18), transparent 60%),
     radial-gradient(700px 500px at 70% 60%, rgba(14, 165, 233, 0.12), transparent 55%),
     linear-gradient(135deg, #020617, #020617);
 }
 
-/* ===== Card (kept small enough to always fit) ===== */
+/* ===== Card ===== */
 .card {
   width: min(520px, 100%);
   text-align: center;
-  max-height: calc(100dvh - 32px);
-  overflow: hidden;
 }
 
 /* ===== Avatar wrap + glow ===== */
@@ -48,7 +49,6 @@ body {
   border-radius: 50%;
   border: 3px solid #38bdf8;
   position: relative;
-  display: block;
 }
 
 .avatarWrap::before {
@@ -59,7 +59,6 @@ body {
   background: radial-gradient(circle, rgba(56, 189, 248, 0.22), transparent 65%);
   filter: blur(10px);
   opacity: 0.9;
-  z-index: 0;
 }
 
 .avatarImg {
@@ -67,12 +66,9 @@ body {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  display: block;
-  position: relative;
-  z-index: 1;
 }
 
-/* Pulse the avatar border only when LIVE */
+/* ===== Live animation ===== */
 .liveAvatar {
   animation: liveBorderPulse 1.6s ease-in-out infinite;
 }
@@ -95,21 +91,19 @@ body {
 /* ===== Title & bio ===== */
 h1 {
   margin: 0;
-  font-size: clamp(2.0rem, 3.6vw, 2.6rem);
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
 }
 
 .bio {
   margin: 8px 0 10px;
   opacity: 0.85;
   line-height: 1.35;
-  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
 }
 
-/* ===== Live/status row ===== */
+/* ===== Status ===== */
 .statusRow {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 10px;
   flex-wrap: wrap;
   margin: 8px 0 12px;
@@ -125,7 +119,6 @@ h1 {
   font-size: 0.85rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  white-space: nowrap;
 }
 
 .badge.live {
@@ -147,64 +140,32 @@ h1 {
 }
 
 @keyframes livePulse {
-  0%   { transform: scale(1); opacity: 1; }
-  50%  { transform: scale(1.45); opacity: 0.6; }
-  100% { transform: scale(1); opacity: 1; }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.45); }
+  100% { transform: scale(1); }
 }
 
-.smallLink {
-  opacity: 0.85;
-  color: #93c5fd;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.85rem;
-}
-
-.smallLink:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-/* ===== Buttons ===== */
+/* ===== Links ===== */
 .links {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 6px;
 }
 
 .links a {
-  text-decoration: none;
   background: #0ea5e9;
   color: #020617;
-  padding: 12px 14px;
+  padding: 12px;
   border-radius: 14px;
   font-weight: 800;
-  font-size: 0.95rem;
-  text-align: center;
-  transition: transform 0.15s ease, background 0.15s ease;
+  text-decoration: none;
 }
 
 .links a:hover {
-  transform: translateY(-2px);
   background: #38bdf8;
 }
 
 /* ===== Footer ===== */
-footer {
-  margin-top: 14px;
-  font-size: 0.7rem;
-  opacity: 0.55;
-}
-
-/* ===== Smaller phones ===== */
-@media (max-width: 420px) {
-  .avatarWrap { width: 104px; height: 104px; margin-bottom: 8px; }
-  .links a { padding: 12px; }
-  footer { margin-top: 12px; }
-}
-
-/* Footer */
 .siteFooter {
   margin-top: 18px;
   font-size: 0.85rem;

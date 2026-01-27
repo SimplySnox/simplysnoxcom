@@ -1,0 +1,310 @@
+/* src/pages/Minecraft/onelife.css */
+
+/* Fullscreen, no-scroll card layout */
+.onelifePage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(900px 600px at 15% 20%, rgba(255, 80, 80, 0.16), transparent 60%),
+    radial-gradient(700px 500px at 70% 60%, rgba(255, 140, 0, 0.10), transparent 55%),
+    linear-gradient(135deg, #0b0f1a, #070a12);
+}
+
+.onelifeCard {
+  width: min(920px, 100%);
+  background: rgba(20, 20, 24, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  padding: 26px 28px 18px;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+}
+
+/* Header */
+.onelifeHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.onelifeTitle {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* ✅ Gradient title */
+.titleGradient {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff3b3b, #ff9a2f, #ffd166);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 8px 28px rgba(255, 90, 60, 0.20);
+}
+
+.onelifeSub {
+  margin-top: 4px;
+  opacity: 0.85;
+  font-weight: 700;
+}
+
+.onelifeDesc,
+.onelifeMotd {
+  margin: 12px 0 0;
+  opacity: 0.86;
+  line-height: 1.35;
+}
+
+.onelifeMotd {
+  opacity: 0.9;
+}
+
+/* Status chip */
+.onelifeStatus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-width: 240px;
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #94a3b8;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.statusDot.on {
+  background: #22c55e;
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.55);
+}
+
+.statusDot.off {
+  background: #ef4444;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.45);
+}
+
+.statusDot.loading {
+  background: #f59e0b;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.45);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.65; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.statusText {
+  display: grid;
+  gap: 2px;
+  font-weight: 800;
+}
+
+.statusMeta {
+  font-size: 0.85rem;
+  opacity: 0.78;
+  font-weight: 600;
+}
+
+/* Grid */
+.onelifeGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.onelifeSection {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.onelifeFriend {
+  background: linear-gradient(180deg, rgba(255, 60, 60, 0.10), rgba(255, 255, 255, 0.03));
+}
+
+.onelifeH2 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+/* Click-to-copy fields */
+.fieldBtn {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 86px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px;
+  margin-top: 10px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  text-align: left;
+}
+
+.fieldBtn:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.34);
+}
+
+.fieldBtn:active {
+  transform: translateY(1px);
+}
+
+.fieldLabel {
+  font-weight: 800;
+  opacity: 0.9;
+}
+
+.fieldCode {
+  justify-self: end;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Hint hidden until hover */
+.fieldHint {
+  font-size: 0.85rem;
+  opacity: 0;
+  font-weight: 700;
+  padding-left: 6px;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.fieldBtn:hover .fieldHint {
+  opacity: 0.55;
+}
+
+.friendField .fieldCode {
+  background: rgba(255, 80, 80, 0.12);
+  border: 1px solid rgba(255, 80, 80, 0.20);
+}
+
+/* Mini actions */
+.miniActions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.miniBtn {
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 900;
+  background: rgba(255, 60, 60, 0.95);
+  color: #0b0f1a;
+  border: 1px solid rgba(255, 60, 60, 0.3);
+}
+
+.miniBtn:hover {
+  background: rgba(255, 90, 90, 0.95);
+}
+
+/* Steps + notes */
+.onelifeSteps {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  line-height: 1.55;
+  opacity: 0.92;
+}
+
+.tinyNote {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* Rules */
+.rulesLine {
+  margin-top: 16px;
+  text-align: center;
+  opacity: 0.85;
+  font-weight: 700;
+}
+
+/* Toast */
+.onelifeToast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  z-index: 50;
+}
+
+/* Back */
+.onelifeBack {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  opacity: 0.7;
+  text-decoration: none;
+}
+.onelifeBack:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Mobile optimization */
+@media (max-width: 860px) {
+  .onelifeCard {
+    padding: 18px 16px 14px;
+  }
+  .onelifeStatus {
+    min-width: unset;
+  }
+}
+
+@media (max-width: 720px) {
+  .onelifeHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .onelifeGrid2 {
+    grid-template-columns: 1fr;
+  }
+  .fieldBtn {
+    grid-template-columns: 74px 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px;
+  }
+  .fieldCode {
+    justify-self: start;
+  }
+  .fieldHint {
+    grid-column: 1 / -1;
+    padding-left: 0;
+  }
+  .rulesLine {
+    font-size: 0.95rem;
+  }
+}

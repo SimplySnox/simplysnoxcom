@@ -1,5 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home.jsx";
+// OneLife
+import Onelife from "./pages/Minecraft/Onelife.jsx";
 // API
 import Fortune from "./pages/fun/Fortune.jsx";
 import Roast from "./pages/fun/Roast.jsx";
@@ -15,6 +17,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+
+      <Route path="/onelife" element={<Onelife />} />
 
       <Route path="/fun/fortune" element={<Fortune />} />
       <Route path="/fun/roast" element={<Roast />} />
