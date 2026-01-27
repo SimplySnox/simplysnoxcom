@@ -262,7 +262,7 @@
 }
 
 /* Back */
-.onelifeBack {
+/*.onelifeBack {
   display: block;
   margin-top: 16px;
   text-align: center;
@@ -272,7 +272,31 @@
 .onelifeBack:hover {
   opacity: 1;
   text-decoration: underline;
+}*/
+
+.onelifeBack {
+  display: block;
+  margin-top: 18px;
+
+  font-size: 0.85rem;
+  opacity: 0.85;
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
 }
+
+.onelifeBack:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.onelifeBack:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+
 
 /* Mobile optimization */
 @media (max-width: 860px) {
