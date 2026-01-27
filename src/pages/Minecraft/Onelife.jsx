@@ -3,6 +3,10 @@ import "./onelife.css";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 export default function Onelife() {
+  useEffect(() => {
+    document.title = "OneLife SMP • Snox";
+  }, []);
+
   const JAVA_HOST = "smp.simplysnox.com";
   const BEDROCK_HOST = "smp.simplysnox.com";
   const BEDROCK_PORT = "25582";
