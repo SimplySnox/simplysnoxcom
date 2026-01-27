@@ -107,7 +107,11 @@ export default function Home() {
           </a>
         </div>
 
-        <footer>© 2026 SimplySnox</footer>
+        <footer className="siteFooter">
+          © 2026 SimplySnox •{" "}
+          <a href="/privacy">Privacy</a> •{" "}
+          <a href="/terms">Terms</a>
+        </footer>
       </div>
     </div>
   );

@@ -203,3 +203,19 @@ footer {
   .links a { padding: 12px; }
   footer { margin-top: 12px; }
 }
+
+/* Footer */
+.siteFooter {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.siteFooter a {
+  color: #4db8ff;
+  text-decoration: none;
+}
+
+.siteFooter a:hover {
+  text-decoration: underline;
+}
