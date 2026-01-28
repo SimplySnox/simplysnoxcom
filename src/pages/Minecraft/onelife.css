@@ -1,5 +1,7 @@
 /* src/pages/Minecraft/onelife.css */
 
+* { -webkit-text-size-adjust: 100%; }
+
 /* Fullscreen, no-scroll card layout */
 .onelifePage {
   position: fixed;
@@ -331,4 +333,5 @@
   .rulesLine {
     font-size: 0.95rem;
   }
+
 }
